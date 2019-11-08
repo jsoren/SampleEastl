@@ -1,13 +1,19 @@
 #include <iostream>
-#include <vector>
+
+#include <EASTL/vector.h>
 
 int main()
 {
-    std::vector<int> vec;
+    eastl::vector<int> vec;
     for (int i = 0; i < 5; ++i)
     {
         vec.push_back(i);
     }
+
     std::cout << "Hello, World!" << std::endl;
-    return 0;
+
+    for (int i = 0; i < 5; ++i)
+    {
+        std::cout << vec[i] << std::endl;
+    }
 }
