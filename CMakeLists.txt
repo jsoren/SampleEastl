@@ -7,6 +7,6 @@ SET(EASTL_BUILD_TESTS true) # Needed for some includes
 
 add_subdirectory(EASTL)
 
-add_executable(SampleEastl main.cpp)
+add_executable(SampleEastl main.cpp eastl_allocator_impl.cpp)
 
 target_link_libraries(SampleEastl LINK_PUBLIC EASTL)
