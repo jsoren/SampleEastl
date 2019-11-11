@@ -6,25 +6,23 @@
 
 int main()
 {
-    eastl::vector<int> vec;
-    for (int i = 0; i < 5; ++i)
     {
-        vec.push_back(i);
+        std::cout << "vector" << std::endl;
+        eastl::vector<int> vec;
+        for (int i = 0; i < 5; ++i)
+        {
+            vec.push_back(i);
+            std::cout << vec[i] << std::endl;
+        }
     }
 
-    for (int i = 0; i < 5; ++i)
     {
-        std::cout << vec[i] << std::endl;
-    }
-
-    eastl::fixed_vector<int, 5> fixedVector;
-    for (int i = 0; i < 5; ++i)
-    {
-        fixedVector.push_back(i);
-    }
-
-    for (int i = 0; i < 5; ++i)
-    {
-        std::cout << fixedVector[i] << std::endl;
+        std::cout << "fixed_vector" << std::endl;
+        eastl::fixed_vector<int, 5> fixedVector;
+        for (int i = 0; i < 5; ++i)
+        {
+            fixedVector.push_back(i);
+            std::cout << fixedVector[i] << std::endl;
+        }
     }
 }
