@@ -1,4 +1,5 @@
 #include <EASTL/allocator.h>
+#include <iostream>
 
 char memory[1024];
 char* mem_ptr = memory;
@@ -68,6 +69,7 @@ void* allocator::allocate(size_t n, int flags)
 #if EASTL_DLL
     return allocate(n, EASTL_SYSTEM_ALLOCATOR_MIN_ALIGNMENT, 0, flags);
 #elif (EASTL_DEBUGPARAMS_LEVEL <= 0)
+    std::cout << "Allocated " << n << " bytes" << std::endl;
     void* allocated_mem = (void*)mem_ptr;
     mem_ptr += n;
     return allocated_mem;
@@ -101,6 +103,7 @@ void* allocator::allocate(size_t n, size_t alignment, size_t offset, int flags)
 
             return pAligned;
 #elif (EASTL_DEBUGPARAMS_LEVEL <= 0)
+    std::cout << "Allocated " << n << " bytes" << std::endl;
     void* allocated_mem = (void*)mem_ptr;
     mem_ptr += n;
     return allocated_mem;
@@ -114,7 +117,7 @@ void* allocator::allocate(size_t n, size_t alignment, size_t offset, int flags)
 }
 
 
-void allocator::deallocate(void* p, size_t)
+void allocator::deallocate(void* p, size_t n)
 {
 #if EASTL_DLL
     if (p != nullptr)
@@ -123,6 +126,7 @@ void allocator::deallocate(void* p, size_t)
                 delete[](char*)pOriginalAllocation;
             }
 #else
+    std::cout << "Deallocated " << n << " bytes" << std::endl;
     //delete[](char*)p;
 #endif
 }
