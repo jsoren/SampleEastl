@@ -1,6 +1,8 @@
-#include <iostream>
+#define EASTL_USER_DEFINED_ALLOCATOR
 #include <EASTL/vector.h>
 #include <EASTL/fixed_vector.h>
+
+#include <iostream>
 
 int main()
 {

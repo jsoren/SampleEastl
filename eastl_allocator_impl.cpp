@@ -1,4 +1,6 @@
+#define EASTL_USER_DEFINED_ALLOCATOR
 #include <EASTL/allocator.h>
+
 #include <iostream>
 
 char memory[1024];
