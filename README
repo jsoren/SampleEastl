@@ -1,0 +1,13 @@
+A sample repository to show the usage of EASTL types
+
+
+Setup issues:
+
+EASTL has an infinitely recursive submodule structure. In order to initialize at exactly the correct depth,
+run :
+git submodule update --init
+cd EASTL
+git submodule update --init
+
+
+There's a strange CMake issue where cmake must be run twice in order to properly set everything up.
