@@ -1,3 +1,8 @@
+// The following #define is necessary for the EASTL headers
+// to use a custom implementation for the default allocator.
+// For practical usage, it doesn't make sense to include this
+// in every file, so instead, this line can be included in
+// EASTL/include/EASTL/internal/config.h
 #define EASTL_USER_DEFINED_ALLOCATOR
 #include <EASTL/vector.h>
 #include <EASTL/fixed_vector.h>
